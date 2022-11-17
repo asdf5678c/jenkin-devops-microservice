@@ -17,5 +17,15 @@ pipeline {
                 echo 'Deploy done'
             }
         }
+    } post {
+        always {
+            echo 'Im awesome. I run always'
+        }
+        success {
+            echo 'aa success'
+        }
+        failure {
+            echo 'bb failure'
+        }
     }
 }
