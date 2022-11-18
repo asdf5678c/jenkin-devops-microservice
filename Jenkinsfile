@@ -12,8 +12,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo $mavenHome
-                echo $PATH
+                echo "$mavenHome"
+                echo "$PATH"
                 sh 'ls "$mavenHome/bin"'
                 sh 'find / -name mvn'
                 sh 'mvn --version'
