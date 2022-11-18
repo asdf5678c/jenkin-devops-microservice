@@ -14,6 +14,7 @@ pipeline {
             steps {
                 echo "$mavenHome"
                 sh 'ls $mavenHome/bin'
+                sh 'find / -name mvn'
                 sh 'mvn --version'
                 sh 'docker --version'
                 echo 'Build done'
