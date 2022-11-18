@@ -12,7 +12,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                //sh 'mvn --version'
+                echo "$PATH"
+                sh 'ls $mavenHome/bin'
+                sh 'mvn --version'
                 sh 'docker --version'
                 echo 'Build done'
                 echo "PATH - $PATH"
