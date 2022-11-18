@@ -1,10 +1,10 @@
 pipeline {
-    agent { docker { image 'maven:latest'} }
+    agent { docker { image 'node:19.1.0'} }
 
     stages {
         stage('Build') {
             steps {
-                sh 'mvn --version'
+                sh 'node --version'
                 echo 'Build done'
             }
         }
