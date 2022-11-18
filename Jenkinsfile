@@ -13,7 +13,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo "$PATH"
-                sh 'ls $mavenHome/bin'
+                sh 'ls $dockerHome/bin'
                 sh 'mvn --version'
                 sh 'docker --version'
                 echo 'Build done'
