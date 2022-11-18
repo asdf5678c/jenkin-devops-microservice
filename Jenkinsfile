@@ -1,10 +1,19 @@
 pipeline {
     //agent { docker { image 'node:19.1.0'} }
     agent any
+   
+    environment {
+       dockerHOME = tool 'myDocker'
+       mavenHOME = tool 'myMaven'
+       PATH = "$dockerHome/bin:$mavenHome/bin:$PATH"
+    }
+
 
     stages {
         stage('Build') {
             steps {
+                sh 'mvn --version'
+                sh 'docker --version'
                 echo 'Build done'
                 echo "PATH - $PATH"
                 echo "BUILD_NUMBER - $env.BUILD_NUMBER"
