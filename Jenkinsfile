@@ -55,7 +55,7 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                script {
-                   docker.withRegistry('', 'docerhub') {
+                   docker.withRegistry('https://hub.docker.com', 'docerhub') {
                        dockerImage.push();
                        dockerImage.push('latest');
                    } 
